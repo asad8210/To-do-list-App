@@ -3,14 +3,14 @@ from keycloak import KeycloakOpenID
 
 def perform_graphql_operations():
     # Initialize Keycloak client
-    keycloak_openid = KeycloakOpenID(server_url="KEYCLOAK_SERVER_URL",
+    keycloak_openid = KeycloakOpenID(server_url="https://www.keycloak.org/",
                                      client_id="YOUR_CLIENT_ID",
                                      realm_name="YOUR_REALM_NAME",
                                      client_secret_key="YOUR_CLIENT_SECRET_KEY",
                                      verify=True)
 
     # Get Keycloak login URL
-    login_url = keycloak_openid.auth_url("REDIRECT_URL")
+    login_url = keycloak_openid.auth_url("https://www.keycloak.org/getting-started/getting-started-docker")
 
     # Open login URL in browser for user authentication
     print("Please log in with Keycloak:")
